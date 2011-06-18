@@ -1,0 +1,20 @@
+(trigger
+    (key [[ctrl][alt][cmd]X]))
+
+(name [Test RegExp in First Line])
+
+(input selection)
+
+(output html)
+
+(save nothing)
+
+(script [# Select a regular expression in your text; this command will show you matches in the rest of your text.
+# First line of input is expected to be a regular
+# expression. If we're doing matching, leave out the /slashes/, eg:
+# (.+)z
+# If we're doing substitution, use slashes to identify the expression as such:
+# /old/new/ 
+# Every line after the first is match fodder, used to test the regexp.
+
+ruby "$TM_BUNDLE_SUPPORT/bin/rx_helper.rb"|pre])
